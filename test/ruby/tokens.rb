@@ -1,0 +1,105 @@
+# Exceptions
+
+raise
+raise error
+raise "error"
+raise Type
+raise Type.new(error)
+raise Type, error
+raise if true
+
+begin
+rescue
+rescue Type
+rescue Type, NoMemory
+rescue => error
+rescue Type => error
+rescue Type, NoMemory => error
+end
+
+# Methods
+
+return 
+return 123
+return "application"
+return application
+return if true
+
+super 
+super application
+super(type)
+
+yield 
+yield self
+yield application
+
+# Modules
+
+module Type
+end
+module Application
+end
+
+refine Type
+end
+refine Application
+end
+
+include Type
+include Application
+extend Type
+extend Application
+using Type
+using Application
+
+# Names
+
+application
+@application
+@@application
+$application
+APPLICATION
+Application
+
+type
+@type
+@@type
+$type
+TYPE
+Type
+
+# Operators
+
+1 + 2 - 3 * 4 / 5 % 6**7
+number += 1
+number -= 2
+number *= 3
+number /= 4
+number %= 5
+number **= 6
+1 == 2
+1 != 2
+1 > 2
+1 < 2
+1 >= 2
+1 <= 2
+1 === 2
+1 <=> 2
+1 && 2 || 3
+!1
+1 => 2
+1 & 2 | 3 ^ 4 ~ 5
+1 >> 2 << 3
+
+# Statements
+
+require "path/to/file"
+require "another/file"
+undef type
+undef definition
+defined?(type)
+defined?(definition)
+attr_reader :type, :definition
+attr_writer :type, :definition
+attr_accessor :type, :definition
+

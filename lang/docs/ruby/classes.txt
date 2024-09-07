@@ -1,0 +1,18 @@
+class <class>
+end
+
+class <class> < <class>
+end
+
+class << self
+end
+
+def initialize(<args>)
+end
+
+protected
+private
+protected :<method>
+private :<method>
+
+ClassName.new(<args>)
