@@ -1,79 +1,35 @@
 title: /\w*\.rb (.*) - VIM/
 -
 
-tag(): user.code_data_types
-
-
-# document string
-
-doc string <user.text>:
-  user.vim_insert_mode("<<~DOC\n{text}\nDOC", "a")
-
-doc string:
-  user.vim_insert_mode("<<~DOC\nDOC", "a")
-  key("O")
-
-# symbol
-
-sim <user.key_name>:
-  user.vim_insert_mode(":{key_name}", "a")
-
-sim:
-  user.vim_insert_mode(":", "a")
-  key("i")
-
-# array
-
-string list:
-  user.vim_insert_mode("%w[]", "a")
-  insert("h")
-
-sim list:
-  user.vim_insert_mode("%i[]", "a")
-  insert("h")
-
-# key => value
-
-string key <user.key_name> [to]:
-  user.vim_insert_mode('"{key_name}": ', "a")
-
-object key <user.variable_name> [to]:
-  user.vim_insert_mode("{variable_name} => ", "a")
+test <user.decimal_number>:
+  user.vim_insert_mode(decimal_number)
 
 # range
 
-range <user.number_string> (to | by) <user.number_string>:
-  user.vim_insert_mode("({number_string_1}..{number_string_2})", "a")
+range <user.decimal_number> (to | by) <user.decimal_number>:
+  user.vim_tokeny_insert("range full_by", "{decimal_number_1} {decimal_number_2}")
 
-range <user.number_string> until <user.number_string>:
-  user.vim_insert_mode("({number_string_1}...{number_string_2})", "a")
+range <user.decimal_number> until <user.decimal_number>:
+  user.vim_tokeny_insert("range full_until", "{decimal_number_1} {decimal_number_2}")
 
-range <user.number_string>:
-  user.vim_insert_mode("({number_string}..)", "a")
+# interpolation
 
-range (to | by) <user.number_string>:
-  user.vim_insert_mode("(..{number_string})", "a")
+interpol <user.snake_name>:
+  user.vim_tokeny_insert("interpolation base", snake_name)
 
-range until <user.number_string>:
-  user.vim_insert_mode("(...{number_string})", "a")
+interpol:
+  user.vim_tokeny_insert("interpolation empty")
 
-object range <user.number_string> (to | by) <user.number_string>:
-  user.vim_insert_mode("Range.new({number_string_1}, {number_string_2})", "a")
+# key
 
-object range <user.number_string> until <user.number_string>:
-  user.vim_insert_mode("Range.new({number_string_1}, {number_string_2}, true)", "a")
+key <user.key_name> [to]:
+  user.vim_tokeny_insert("key symbol", key_name)
 
-# regexp
+key to:
+  user.vim_tokeny_insert("key symbol")
 
-rig <user.text>:
-  user.vim_insert_mode("/{text}/", "a")
+string key <user.key_name> [to]:
+  user.vim_tokeny_insert("key string", key_name)
 
-rig:
-  user.vim_insert_mode("//", "a")
-  key("i")
-
-# lambda
-
-lambda:
-  user.vim_insert_mode("-> {  }", "a")
-  key("2h")
+object key <user.variable_name> [to]:
+  user.vim_tokeny_insert("key object", key_name)

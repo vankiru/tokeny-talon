@@ -7,6 +7,7 @@ ctx.matches = "title: /.*\.rb (.*) - VIM/"
 mod = Module()
 mod.list("input_no_capture", desc="Input for tokens without capture")
 mod.list("input_text", desc="Input for text tokens")
+mod.list("input_decimal_number", desc="Input for number tokens")
 mod.list("input_snake_name", desc="Input for variable name tokens")
 mod.list("input_class_name", desc="Input for class name tokens")
 
