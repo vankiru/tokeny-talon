@@ -1,34 +1,15 @@
 title: /\w*\.rb (.*) - VIM/
 -
 
-tag(): user.code_comments
-
-frozen string:
-  insert("gg")
-  user.vim_insert_mode("# frozen_string_literal: true", "O")
-
-magic encode:
-  insert("gg")
-  user.vim_insert_mode("# encoding: ", "O")
-  insert("a")
-
-magic warn:
-  insert("gg")
-  user.vim_insert_mode("# warn_indent: true", "O")
-
 magic share none:
-  insert("gg")
-  user.vim_insert_mode("# shareable_constant_value: none", "O")
+  user.vim_tokeny_insert("magic_share base", "none")
 
 magic share lit:
-  insert("gg")
-  user.vim_insert_mode("# shareable_constant_value: literal", "O")
+  user.vim_tokeny_insert("magic_share base", "literal")
 
 magic share every:
-  insert("gg")
-  user.vim_insert_mode("# shareable_constant_value: experimental_everything", "O")
+  user.vim_tokeny_insert("magic_share base", "experimental_everything")
 
 magic share copy:
-  insert("gg")
-  user.vim_insert_mode("# shareable_constant_value: experimental_copy", "O")
+  user.vim_tokeny_insert("magic_share base", "experimental_copy")
 

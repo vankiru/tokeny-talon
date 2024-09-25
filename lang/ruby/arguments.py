@@ -3,11 +3,35 @@ from talon import Context, actions
 ctx = Context()
 ctx.matches = "title: /\w*\.rb (.*) - VIM/"
 
-@ctx.action_class("user")
-class CodeActions:
-    def code_arguments_default(name: str):
-        actions.user.vim_insert_mode(f"{name} = ", "a")
-
-    def code_arguments_default_sign():
-        actions.user.vim_insert_mode(f" = ", "a")
-
+RUBY_ARGUMENT_TOKENS = {
+    "comma": {
+        "input": {
+            "comma": "base",
+            "coma": "base" 
+        }
+    },
+    "art": {
+        "input": {
+            "capture": "snake_name",
+            "list art": "list",
+            "hash art": "hash",
+            "block art": "block",
+            "default to": "default"
+        },
+        "search": { }
+    },
+    "arts": {
+        "input": {
+            "arts": "base",
+            "left art": "left",
+            "right art": "right"
+        },
+        "search": { }
+    },
+    "barbs": {
+        "input": {
+            "barbs": "base",
+            "barb": "single"
+        }
+    }
+}

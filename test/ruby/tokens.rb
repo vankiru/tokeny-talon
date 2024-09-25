@@ -1,3 +1,6 @@
+# Arguments
+function(name, type = "default")
+
 # Exceptions
 
 raise
@@ -103,3 +106,34 @@ attr_reader :type, :definition
 attr_writer :type, :definition
 attr_accessor :type, :definition
 
+
+# frozen_strin_literal: true
+# warn_indent: en
+# warn_indent: en
+# warn_indent: em
+# shareable_constant_value: none
+# shareable_constant_value: a
+# def remark
+# def remark
+# end
+# end * /mark/
+=begin
+=begin
+text
+=end
+a
+=end
+ Application.new() # this # "this # this is a remark 
+class Application < Base 
+class << self
+public
+end
+def initialize()
+ if if if 
+end
+end
+end
+ unless unless while while until until 
+end
+end
+end next 

@@ -3,28 +3,40 @@ from talon import Context, actions
 ctx = Context()
 ctx.matches = "title: /\w*\.rb (.*) - VIM/"
 
-@ctx.action_class("user")
-class CodeActions:
-    def code_comment_with_text(text: str):
-        actions.user.vim_insert_mode(f"# {text}", "o")
-
-    def code_comment():
-        actions.user.vim_insert_mode("# ", "o")
-        actions.insert("a")
-
-    def code_line_comment_with_text(text: str):
-        actions.insert("$")
-        actions.user.vim_insert_mode(f" # {text}", "a")
-        """Inline comment with text"""
-
-    def code_line_comment():
-        actions.insert("$")
-        actions.user.vim_insert_mode(" # ", "a")
-        actions.insert("a")
-
-    def code_multiline_comment_with_text(text: str):
-        actions.user.vim_insert_mode(f"=begin\n{text}\n=end", "o")
-
-    def code_multiline_comment():
-        actions.user.vim_insert_mode("=begin\n=end", "o")
-        actions.insert("O")
+RUBY_COMMENT_TOKENS = {
+    "comment": {
+        "input": {
+            "capture": "text",
+            "remark": "base",
+            "multi remark": "multi",
+        },
+        "search": { }
+    },
+    "frozen_string": {
+        "input": {
+            "frozen string": "base"
+        },
+        "search": { }
+    },
+    "magic_encode": {
+        "input": {
+            "capture": "snake_name",
+            "magic encode": "base"
+        },
+        "search": { }
+    },
+    "magic_warn": {
+        "input": {
+            "capture": "snake_name",
+            "magic warn": "base"
+        },
+        "search": { }
+    },
+    "magic_share": {
+        "input": {
+            "capture": "snake_name",
+            "magic share": "base"
+        },
+        "search": { }
+    },
+}

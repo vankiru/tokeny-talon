@@ -1,23 +1,9 @@
 title: /\w*\.rb (.*) - VIM/
 -
 
-tag(): user.code_arguments
-
-key art <user.variable_name>:
-  user.vim_insert_mode("{variable_name}:", "a")
-
-key art:
-  user.vim_insert_mode(":", "a")
-
-block art <user.variable_name>:
-  user.vim_insert_mode("&{variable_name}", "a")
-
-block art:
-  user.vim_insert_mode("&", "a")
-
 forward art:
-  user.vim_insert_mode("...", "a")
+  user.vim_tokeny_insert("art forward")
 
-barbs:
-  user.vim_insert_mode(" ||", "a")
-  insert("h")
+default <user.variable_name> [to]:
+  user.vim_tokeny_insert("art default {variable_name}")
+
