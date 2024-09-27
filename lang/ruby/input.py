@@ -1,5 +1,5 @@
 from talon import Module, Context, actions
-from .tokens import RUBY_TOKENS
+from .token import RUBY_TOKENS
 
 ctx = Context()
 ctx.matches = "title: /.*\.rb (.*) - VIM/"
