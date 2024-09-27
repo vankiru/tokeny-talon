@@ -18,7 +18,3 @@ ctx.lists["user.std_method"] = {
 
 ctx.lists["user.std_block_method"] = {
 }
-
-@ctx.action_class("user")
-class CodeActions:
-    pass

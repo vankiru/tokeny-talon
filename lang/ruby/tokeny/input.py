@@ -10,6 +10,8 @@ mod.list("input_text", desc="Input for text tokens")
 mod.list("input_decimal_number", desc="Input for number tokens")
 mod.list("input_snake_name", desc="Input for variable name tokens")
 mod.list("input_class_name", desc="Input for class name tokens")
+mod.list("input_const_name", desc="Input for const name tokens")
+mod.list("input_file_path", desc="Input for file path tokens")
 
 def register_tokens(tokens):
     lists = {}
@@ -30,7 +32,6 @@ def register_tokens(tokens):
 
     return lists
 
-print(RUBY_TOKENS)
 lists = register_tokens(RUBY_TOKENS)
 print(lists)
 

@@ -137,3 +137,46 @@ end
 end
 end
 end next 
+ break next case 
+when then 
+else
+else
+end
+ if 
+elsif
+else
+when then next break 
+   ? : 
+end
+
+"text" 
+end
+end
+end
+end
+:type, /text/, [:type, :application, :one] 
+{type:"text"} 
+Set.new() 
+-> { } 
+proc { } 
+
+
+class Sidekick
+  class Tasting
+    class << self
+      def initialize
+      end
+      def type
+      end
+    end
+    module IThink
+      module IThink
+        include Application
+        using TheType
+        extend Type
+        refine Type do
+        end
+      end
+    end
+  end
+end

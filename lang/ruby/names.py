@@ -3,31 +3,58 @@ from talon import Context, actions
 ctx = Context()
 ctx.matches = "title: /\w*\.rb (.*) - VIM/"
 
-@ctx.capture('user.class_name', rule="<user.camel_name> ((pack | back) <user.camel_name>)*")
-def class_name(m) -> str:
-    names = list(
-        filter(
-            lambda n: n not in ["pack", "back"],
-            list(m)
-        )
-    )
-
-    return "::".join(names)
-
-@ctx.action_class("user")
-class CodeActions:
-    def code_variable_name(name: str):
-        actions.user.vim_insert_mode(f"{name}", "a")
-
-    def code_instance_variable_name(name: str):
-        actions.user.vim_insert_mode(f"@{name}", "a")
-
-    def code_self_name(name: str):
-        actions.user.vim_insert_mode(f"self.{name}", "a")
-
-    def code_constant_name(name: str):
-        actions.user.vim_insert_mode(f"{name}", "a")
-
-    def code_class_name(name: str):
-        actions.user.vim_insert_mode(f"{name}", "a")
-
+RUBY_NAME_TOKENS = {
+    "variable_name": {
+        "input": {
+            "capture": "snake_name",
+            "name": "base"
+        },
+        "search": { }
+    },
+    "instance_variable_name": {
+        "input": {
+            "capture": "snake_name",
+            "instance": "base"
+        },
+        "search": { }
+    },
+    "class_variable_name": {
+        "input": {
+            "capture": "snake_name",
+            "class instance": "base"
+        },
+        "search": { }
+    },
+    "global_name": {
+        "input": {
+            "capture": "snake_name",
+            "global": "base"
+        },
+        "search": { }
+    },
+    "method_name": {
+        "input": {
+            "capture": "snake_name",
+            "bang": "bang",
+            "bank": "bang",
+            "plight": "plight",
+            "self": "self"
+        },
+        "search": { }
+    },
+    "const_name": {
+        "input": {
+            "capture": "const_name",
+            "const": "base"
+        },
+        "search": { }
+    },
+    "class_name": {
+        "input": {
+            "capture": "class_name",
+            "type": "base",
+            "pack": "pack",
+        },
+        "search": { }
+    },
+}

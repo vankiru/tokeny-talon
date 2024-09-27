@@ -1,20 +1,18 @@
 title: /.*\.rb (.*) - VIM/
 -
 
-print <user.text>:
-  user.vim_insert_mode('puts "{text}"', "o")
-
 print:
-  user.vim_insert_mode("puts ", "o")
+  user.vim_tokeny_insert("method_name base", "puts")
+
+print <user.text>:
+  user.vim_tokeny_insert("method_name base", "puts")
+  user.vim_tokeny_insert("string double", text)
 
 call {user.std_method}:
-  user.vim_insert_mode(".{std_method}", "a")
+  user.vim_tokeny_insert("call base", std_method)
 
 (safe | save) (call | cold) {user.std_method}>:
-  user.vim_insert_mode("&.{std_method}", "a")
+  user.vim_tokeny_insert("call safe", std_method)
 
 (bang | bank) {user.std_method}:
-  user.vim_insert_mode(".{std_method}!", "a")
-
-plight {user.std_method}:
-  user.vim_insert_mode(".{std_method}!", "a")
+  user.vim_tokeny_insert("call bang", std_method)

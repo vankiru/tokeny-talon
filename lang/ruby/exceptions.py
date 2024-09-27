@@ -41,7 +41,18 @@ ctx.lists["user.exception_name"] = {
     "system stack": "SystemStackError"
 }
 
-@ctx.action_class("user")
-class CodeActions:
-    def code_exception_raise(name: str):
-        actions.user.vim_insert_mode(f"raise {name}", "o")
+RUBY_EXCEPTION_TOKENS = {
+    "ensure": {
+        "input": {
+            "ensure": "base",
+            "insure": "base"
+        },
+        "search": { }
+    },
+    "retry": {
+        "input": {
+            "retry": "base"
+        },
+        "search": { }
+    },
+}

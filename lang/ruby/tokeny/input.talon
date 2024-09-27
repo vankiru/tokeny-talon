@@ -16,3 +16,8 @@ title: /.*\.rb (.*) - VIM/
 {user.input_class_name} <user.class_name>:
   user.vim_tokeny_insert(input_class_name, class_name)
 
+{user.input_const_name} <user.const_name>:
+  user.vim_tokeny_insert(input_const_name, const_name)
+
+{user.input_file_path} <user.file_path>:
+  user.vim_tokeny_insert(input_file_path, file_path)

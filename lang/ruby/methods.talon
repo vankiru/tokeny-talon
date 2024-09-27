@@ -1,35 +1,20 @@
 title: /\w*\.rb (.*) - VIM/
 -
 
-tag(): user.code_methods
+return:
+  user.vim_tokeny_insert("return empty")
 
-(met bank) | mukbang <user.method_name>:
-  user.vim_insert_mode("def {method_name}!\nend", "o")
-  insert("k$")
+return <user.snake_name>:
+  user.vim_tokeny_insert("return base", snake_name)
 
-met plight <user.method_name>:
-  user.vim_insert_mode("def {method_name}?\nend", "o")
-  insert("k$")
+superb:
+  user.vim_tokeny_insert("super empty")
 
-(safe | save) (call | cold) <user.method_name>:
-  user.vim_insert_mode("&.{method_name}", "a")
-
-(safe | save) (call | cold):
-  user.vim_insert_mode("&.", "a")
-  insert("a")
-
-(call | cold) (bang | bank) <user.method_name>:
-  user.vim_insert_mode(".{method_name}!", "a")
-
-(call | cold) plight <user.method_name>:
-  user.vim_insert_mode(".{method_name}?", "a")
-
-parent:
-  user.vim_insert_mode("super ", "o")
+superb <user.snake_name>:
+  user.vim_tokeny_insert("super base", snake_name)
 
 yield:
-  user.vim_insert_mode("yield ", "o")
+  user.vim_tokeny_insert("yield empty")
 
-yield self:
-  user.vim_insert_mode("yield self", "o")
-
+yield <user.snake_name>:
+  user.vim_tokeny_insert("yield base", snake_name)

@@ -3,26 +3,31 @@ from talon import Context, actions
 ctx = Context()
 ctx.matches = "title: /\w*\.rb (.*) - VIM/"
 
-@ctx.action_class("user")
-class CodeActions:
-    def code_method_with_name(name: str):
-        actions.user.vim_insert_mode(f"def {name}\nend", "o")
-        actions.insert("k$")
-
-    def code_method():
-        actions.user.vim_insert_mode("def \nend", "o")
-        actions.insert("k$a")
-
-    def code_short_method_with_name(name: str):
-        actions.user.vim_insert_mode(f"def {name} = ", "o")
-
-    def code_short_method():
-        actions.user.vim_insert_mode("def  = ", "o")
-        actions.insert("2hi")
-
-    def code_method_return():
-        actions.user.vim_insert_mode("return ", "a")
-
-    def code_method_call(name: str):
-        actions.user.vim_insert_mode(f".{name}", "a")
-
+RUBY_METHOD_TOKENS = {
+    "method": {
+        "input": {
+            "capture": "snake_name",
+            "def": "base",
+            "deaf": "base",
+            "death": "base",
+            "met": "base",
+            "meth": "base",
+            "short def": "short",
+            "short deaf": "short",
+            "short death": "short",
+            "short met": "short",
+            "short meth": "short"
+        },
+        "search": { }
+    },
+    "call": {
+        "input": {
+            "capture": "snake_name",
+            "call": "base",
+            "cold": "base",
+            "safe call": "safe",
+            "safe cold": "safe",
+        },
+        "search": { }
+    },
+}
