@@ -7,43 +7,61 @@ RUBY_STATEMENT_TOKENS = {
     "require": {
         "input": {
             "capture": "file_path",
-            "require": "base",
+            "base": ["require"],
         },
-        "search": { }
+        "search": {
+            "captures": ["file_path"],
+            "actions": ["require"],
+        },
     },
     "undef": {
         "input": {
             "capture": "snake_name",
-            "un death": "base",
-            "undead": "base",
+            "base": ["un death", "undead", "unbind"],
         },
-        "search": { }
+        "search": {
+            "captures": ["snake_name"],
+            "actions": ["un death", "undead", "unbind"],
+        },
     },
     "defined": {
         "input": {
             "capture": "snake_name",
-            "defined": "base"
+            "base": ["defined"],
         },
-        "search": { }
+        "search": {
+            "captures": ["snake_name"],
+            "actions": ["defined"],
+        },
     },
     "attr_reader": {
         "input": {
-            "art read": "base"
+            "capture": "blank",
+            "base": ["art read"],
         },
-        "search": { }
+        "search": {
+            "captures": ["blank"],
+            "actions": ["art read"],
+        },
     },
     "attr_writer": {
         "input": {
-            "art write": "base",
-            "art right": "base"
+            "capture": "blank",
+            "base": ["art write", "art right"],
         },
-        "search": { }
+        "search": {
+            "captures": ["blank"],
+            "actions": ["art write", "art right"],
+        },
     },
     "attr_accessor": {
         "input": {
-            "art access": "base",
-            "art axis": "base",
+            "capture": "blank",
+            "base": ["art access", "art axis"],
         },
-        "search": { }
+        "search": {
+            "captures": ["blank"],
+            "actions": ["art access", "art axis"],
+        },
     },
 }

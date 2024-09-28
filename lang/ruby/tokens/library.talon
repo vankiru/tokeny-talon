@@ -11,7 +11,7 @@ print <user.text>:
 call {user.std_method}:
   user.vim_tokeny_insert("call base", std_method)
 
-(safe | save) (call | cold) {user.std_method}>:
+(safe | save) (call | cold) {user.std_method}:
   user.vim_tokeny_insert("call safe", std_method)
 
 (bang | bank) {user.std_method}:

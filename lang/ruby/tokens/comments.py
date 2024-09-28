@@ -7,36 +7,52 @@ RUBY_COMMENT_TOKENS = {
     "comment": {
         "input": {
             "capture": "text",
-            "remark": "base",
-            "multi remark": "multi",
+            "base": ["remark"],
+            "multi": ["multi remark"],
         },
-        "search": { }
+        "search": {
+            "captures": ["text"],
+            "actions": ["remark"],
+        },
     },
     "frozen_string": {
         "input": {
-            "frozen string": "base"
+            "capture": "blank",
+            "base": ["frozen string"],
         },
-        "search": { }
+        "search": {
+            "captures": ["blank"],
+            "actions": ["frozen string"],
+        },
     },
     "magic_encode": {
         "input": {
             "capture": "snake_name",
-            "magic encode": "base"
+            "base": ["magic encode"],
         },
-        "search": { }
+        "search": {
+            "captures": ["snake_name"],
+            "actions": ["magic encode"],
+        },
     },
     "magic_warn": {
         "input": {
             "capture": "snake_name",
-            "magic warn": "base"
+            "base": ["magic warn"],
         },
-        "search": { }
+        "search": {
+            "captures": ["snake_name"],
+            "actions": ["magic warn"],
+        },
     },
     "magic_share": {
         "input": {
             "capture": "snake_name",
-            "magic share": "base"
+            "base": ["magic share"],
         },
-        "search": { }
+        "search": {
+            "captures": ["snake_name"],
+            "actions": ["magic share"],
+        },
     },
 }

@@ -6,95 +6,146 @@ ctx.matches = "title: /\w*\.rb (.*) - VIM/"
 RUBY_CONTROL_TOKENS = {
     "if": {
         "input": {
-            "if": "inline",
-            "if do": "multi",
-            "if end": "multi",
-            "leaf": "multi"
+            "capture": "blank",
+            "inline": ["if"],
+            "multi": ["if do", "if end", "leaf"]
         },
-        "search": { }
+        "search": {
+            "captures": ["expression"],
+            "actions": ["if"],
+        },
     },
     "unless": {
         "input": {
-            "unless": "inline",
-            "unless do": "multi",
-            "unless end": "multi"
+            "capture": "blank",
+            "inline": ["unless"],
+            "multi": ["unless do", "unless end"]
         },
-        "search": { }
+        "search": {
+            "captures": ["expression"],
+            "actions": ["unless"],
+        },
     },
     "while": {
         "input": {
-            "while": "inline",
-            "while do": "multi",
-            "while end": "multi"
+            "capture": "blank",
+            "inline": ["while"],
+            "multi": ["while do", "while end"]
         },
-        "search": { }
+        "search": {
+            "captures": ["expression"],
+            "actions": ["while"],
+        },
     },
     "until": {
         "input": {
-            "until": "inline",
-            "until do": "multi",
-            "until end": "multi"
+            "capture": "blank",
+            "inline": ["until"],
+            "multi": ["until do", "until end"]
         },
-        "search": { }
+        "search": {
+            "captures": ["expression"],
+            "actions": ["until"],
+        },
     },
     "else": {
         "input": {
-            "else": "base"
+            "capture": "blank",
+            "base": ["else"],
         },
-        "search": { }
+        "search": {
+            "captures": ["blank"],
+            "actions": ["else"],
+        },
     },
     "elsif": {
         "input": {
-            "else if": "base"
+            "capture": "blank",
+            "base": ["else if"],
         },
-        "search": { }
+        "search": {
+            "captures": ["expression"],
+            "actions": ["else if"],
+        },
     },
     "triple": {
         "input": {
-            "triple": "base"
+            "capture": "blank",
+            "base": ["triple"],
         },
-        "search": { }
+        "search": {
+            "captures": ["expression"],
+            "actions": ["triple"],
+        },
     },
     "case": {
         "input": {
-            "case": "base"
+            "capture": "blank",
+            "base": ["case"],
         },
-        "search": { }
+        "search": {
+            "captures": ["expression"],
+            "actions": ["case"],
+        },
     },
     "when": {
         "input": {
-            "when": "base"
+            "capture": "blank",
+            "base": ["when"],
         },
-        "search": { }
+        "search": {
+            "captures": ["expression"],
+            "actions": ["when"],
+        },
     },
     "then": {
         "input": {
-            "then do": "base"
+            "capture": "blank",
+            "base": ["then do"],
         },
-        "search": { }
+        "search": {
+            "captures": ["expression"],
+            "actions": ["then do", "then"],
+        },
     },
     "begin": {
         "input": {
-            "begin do": "base"
+            "capture": "blank",
+            "base": ["begin do"],
         },
-        "search": { }
+        "search": {
+            "captures": ["blank"],
+            "actions": ["begin do", "begin"],
+        },
     },
     "end": {
         "input": {
-            "do end": "base"
+            "capture": "blank",
+            "base": ["do end"],
         },
-        "search": { }
+        "search": {
+            "captures": ["blank"],
+            "actions": ["do end", "end"],
+        },
     },
     "break": {
         "input": {
-            "break": "base"
+            "capture": "blank",
+            "base": ["break"],
         },
-        "search": { }
+        "search": {
+            "captures": ["expression"],
+            "actions": ["break"],
+        },
     },
     "next": {
         "input": {
-            "next do": "base"
+            "capture": "blank",
+            "base": ["next do"],
         },
-        "search": { }
+        "search": {
+            "captures": ["expression"],
+            "actions": ["next"],
+        },
     },
 }

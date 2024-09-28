@@ -59,6 +59,7 @@ using Application
 
 application
 @application
+ "text" ""  @ 
 @@application
 $application
 APPLICATION
@@ -180,3 +181,14 @@ class Sidekick
     end
   end
 end
+
+class Application
+  
+end
+
+class Publication ::Base 
+end
+
+123
+456
+ application_type ApplicationBase $application_type @type @@type $type type TYPE Type 

@@ -7,52 +7,81 @@ RUBY_CLASS_TOKENS = {
     "class": {
         "input": {
             "capture": "class_name",
-            "class": "base"
+            "base": ["class"],
         },
-        "search": { }
+        "search": {
+            "captures": ["class_name"],
+            "actions": ["class"],
+        },
     },
     "super_class": {
         "input": {
             "capture": "class_name",
-            "superclass": "base"
+            "base": ["superclass"],
         },
-        "search": { }
+        "search": {
+            "captures": ["class_name"],
+            "actions": ["superclass"],
+        },
     },
     "self_class": {
         "input": {
-            "self class": "base"
+            "capture": "blank",
+            "base": ["self class"],
         },
-        "search": { }
+        "search": {
+            "captures": ["blank"],
+            "actions": ["self class"],
+        },
     },
     "initialize": {
         "input": {
-            "class init": "base"
+            "capture": "blank",
+            "base": ["class init"],
         },
-        "search": { }
+        "search": {
+            "captures": ["blank"],
+            "actions": ["class init"],
+        },
     },
     "new": {
         "input": {
             "capture": "class_name",
-            "new": "base"
+            "base": ["new"],
         },
-        "search": { }
+        "search": {
+            "captures": ["class_name"],
+            "actions": ["new"],
+        },
     },
     "private": {
         "input": {
-            "private": "base"
+            "capture": "blank",
+            "base": ["private"],
         },
-        "search": { }
+        "search": {
+            "captures": ["blank"],
+            "actions": ["private"],
+        },
     },
     "protected": {
         "input": {
-            "protected": "base"
+            "capture": "blank",
+            "base": ["protected"],
         },
-        "search": { }
+        "search": {
+            "captures": ["blank"],
+            "actions": ["protected"],
+        },
     },
     "public": {
         "input": {
-            "public": "base"
+            "capture": "blank",
+            "base": ["public"],
         },
-        "search": { }
+        "search": {
+            "captures": ["blank"],
+            "actions": ["public"],
+        },
     },
 }

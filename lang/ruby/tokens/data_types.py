@@ -6,92 +6,140 @@ ctx.matches = "title: /\w*\.rb (.*) - VIM/"
 RUBY_DATA_TYPE_TOKENS = {
     "true": {
         "input": {
-            "true": "base",
+            "capture": "blank",
+            "base": ["true"],
         },
-        "search": { }
+        "search": {
+            "captures": ["blank"],
+            "actions": ["true"],
+        },
     },
     "false": {
         "input": {
-            "false": "base",
+            "capture": "blank",
+            "base": ["false"],
         },
-        "search": { }
+        "search": {
+            "captures": ["blank"],
+            "actions": ["false"],
+        },
     },
     "nil": {
         "input": {
-            "none": "base",
-            "nun": "base"
+            "capture": "blank",
+            "base": ["none", "nil"],
         },
-        "search": { }
+        "search": {
+            "captures": ["blank"],
+            "actions": ["none", "nil"],
+        },
     },
     "number": {
         "input": {
             "capture": "decimal_number",
-            "number": "positive"
+            "positive": ["number"],
         },
-        "search": { }
+        "search": {
+            "captures": ["decimal_number"],
+            "actions": ["number"],
+        },
     },
     "string": {
         "input": {
             "capture": "text",
-            "string": "double",
-            "quote": "quote",
-            "grave": "grave",
-            "docs": "heredoc"
+            "double": ["string"],
+            "quote": ["quote"],
+            "grave": ["grave"],
+            "heredoc": ["docs"],
         },
-        "search": { }
+        "search": {
+            "captures": ["text"],
+            "actions": ["string"],
+        },
     },
     "symbol": {
         "input": {
             "capture": "snake_name",
-            "sim": "base"
+            "base": ["sim"],
         },
-        "search": { }
+        "search": {
+            "captures": ["snake_name"],
+            "actions": ["sim"],
+        },
     },
     "regex": {
         "input": {
             "capture": "text",
-            "rig": "base",
-            "object rig": "object"
+            "base": ["rig"],
+            "object": ["object rig"],
         },
-        "search": { }
+        "search": {
+            "captures": ["text"],
+            "actions": ["rig"],
+        },
     },
     "array": {
         "input": {
-            "list": "base",
-            "sim list": "sim",
-            "string list": "string",
-            "object list": "object"
+            "capture": "blank",
+            "base": ["list"],
+            "sim": ["sim list"],
+            "string": ["string list"],
+            "object": ["object list"],
         },
-        "search": { }
+        "search": {
+            "captures": ["expression"],
+            "actions": ["list"],
+        },
     },
     "hash": {
         "input": {
-            "hash": "base",
-            "object hash": "object"
+            "capture": "blank",
+            "base": ["hash"],
+            "object": ["object hash"],
         },
-        "search": { }
+        "search": {
+            "captures": ["expression"],
+            "actions": ["hash"],
+        },
     },
     "set": {
         "input": {
-            "set list": "base"
+            "capture": "blank",
+            "base": ["set list"],
         },
-        "search": { }
+        "search": {
+            "captures": ["expression"],
+            "actions": ["set list", "set"],
+        },
     },
     "lambda": {
         "input": {
-            "lambda": "lambda",
-            "proc": "proc"
+            "capture": "blank",
+            "lambda": ["lambda"],
+            "proc": ["proc"],
         },
-        "search": { }
+        "search": {
+            "captures": ["expression"],
+            "actions": ["lambda", "proc"],
+        },
     },
     "range": {
         "input": {
             "capture": "decimal_number",
-            "range": "left_by",
-            "range to": "right_by",
-            "range by": "right_by",
-            "range until": "right_until",
+            "left_by": ["range"],
+            "right_by": ["range to"],
+            "right_by": ["range by"],
+            "right_until": ["range until"],
         },
-        "search": { }
+        "search": {
+            "captures": ["digital_number"],
+            "actions": ["range"],
+        },
+    },
+    "key": {
+        "search": {
+            "captures": ["expression"],
+            "actions": ["key"]
+        },
     }
 }

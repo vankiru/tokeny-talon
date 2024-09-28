@@ -28,13 +28,6 @@ class Actions:
     def vim_select_lines(number_string: str):
         """Select multiple lines"""
 
-    def vim_tokeny_insert(variation: str, values: str = ''):
-        """Execute TokenyInsert"""
-
-    def pyperclip_insert(text: str):
-        """Insert via copying to clipboard"""
-
-
 @ctx.action_class("user")
 class VimActions:
     def vim_normal_mode(command: str):
@@ -77,10 +70,3 @@ class VimActions:
         number = int(number_string) - 1
         actions.key("escape")
         actions.insert(f"v{number}j")
-
-    def vim_tokeny_insert(variation: str, values: str = ''):
-        actions.user.vim_command_mode(f"TokenyInsert {variation} {values}")
-
-    def pyperclip_insert(text: str):
-        pyperclip.copy(text)
-        actions.key('super-v')

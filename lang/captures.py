@@ -4,14 +4,10 @@ mod = Module()
 mod.tag("code_names", desc="Names commands")
 
 # Number captures
-@ctx.capture('user.decimal_number', rule="<user.number_string> [point <user.number_string>]")
+
+@mod.capture(rule="<user.number_string> [point <user.number_string>]")
 def decimal_number(m) -> str:
-    number = number_string_1
-
-    if number_string_2:
-        number += (f".{number_string_2}")
-
-    return number
+    return ".".join(m.number_string_list)
 
 # Case captures
 

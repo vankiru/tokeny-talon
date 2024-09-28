@@ -6,32 +6,48 @@ ctx.matches = "title: /\w*\.rb (.*) - VIM/"
 RUBY_ARGUMENT_TOKENS = {
     "comma": {
         "input": {
-            "comma": "base",
-            "coma": "base" 
-        }
+            "capture": "blank",
+            "base": ["comma", "coma"],
+        },
+        "search": {
+            "captures": ["blank"],
+            "actions": ["comma", "coma"]
+        },
     },
     "art": {
         "input": {
             "capture": "snake_name",
-            "list art": "list",
-            "hash art": "hash",
-            "block art": "block",
-            "default to": "default"
+            "list": ["list art"],
+            "hash": ["hash art"],
+            "block": ["block art"],
+            "default": ["default to"],
         },
-        "search": { }
+        "search": {
+            "captures": [],
+            "actions": []
+        },
     },
     "arts": {
         "input": {
-            "arts": "base",
-            "left art": "left",
-            "right art": "right"
+            "capture": "blank",
+            "base": ["arts"],
+            "left": ["left art"],
+            "right": ["right art"],
         },
-        "search": { }
+        "search": {
+            "captures": ["snake_name"],
+            "actions": ["arts", "art"],
+        },
     },
     "barbs": {
         "input": {
-            "barbs": "base",
-            "barb": "single"
-        }
+            "capture": "blank",
+            "base": ["barbs"],
+            "single": ["barb"],
+        },
+        "search": {
+            "captures": ["snake_name"],
+            "actions": ["barbs", "barb"],
+        },
     }
 }

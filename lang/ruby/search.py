@@ -1,21 +1,15 @@
-@mod.action_class
-class Actions:
-    def code_go_to(token: str, identifier: str = ""):
-        """Go to the next token"""
+from talon import Module, Context, actions
+from .token import RUBY_TOKENS
 
-    def code_back_to(token: str, identifier: str = ""):
-        """Go to the next token"""
+ctx = Context()
+ctx.matches = "title: /.*\.rb (.*) - VIM/"
 
-    def code_search(token: str, identifier: str = "", direction: str = "/"):
-        """Search for a token"""
-
-@ctx.action_class("user")
-class CodeActions:
-    def code_go_to(token: str, identifier: str = ""):
-        actions.user.vim_command_mode("TokenyTo {str} {identifier}")
-
-    def code_back_to(token: str, identifier: str = ""):
-        actions.user.vim_command_mode("TokenyBack {str} {identifier}")
-
-    def code_search(token: str, identifier: str = "", direction: str = "/"):
-        actions.user.vim_command_mode("TokenySearch {str} {identifier}")
+mod = Module()
+mod.list("tokeny_search_blank", desc="Search for tokens without capture")
+mod.list("tokeny_search_text", desc="Search for text tokens")
+mod.list("tokeny_search_decimal_number", desc="Search for number tokens")
+mod.list("tokeny_search_snake_name", desc="Search for variable name tokens")
+mod.list("tokeny_search_class_name", desc="Search for class name tokens")
+mod.list("tokeny_search_const_name", desc="Search for const name tokens")
+mod.list("tokeny_search_file_path", desc="Search for file path tokens")
+mod.list("tokeny_search_expression", desc="Search for expression tokens")

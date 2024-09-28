@@ -7,27 +7,41 @@ RUBY_METHOD_TOKENS = {
     "method": {
         "input": {
             "capture": "snake_name",
-            "def": "base",
-            "deaf": "base",
-            "death": "base",
-            "met": "base",
-            "meth": "base",
-            "short def": "short",
-            "short deaf": "short",
-            "short death": "short",
-            "short met": "short",
-            "short meth": "short"
+            "base": ["def", "deaf", "death", "met", "meth"],
+            "short": ["short def", "short deaf", "short death", "short met", "short meth"],
         },
-        "search": { }
+        "search": {
+            "captures": ["snake_name"],
+            "actions": ["def", "deaf", "death", "met", "meth"],
+        },
     },
     "call": {
         "input": {
             "capture": "snake_name",
-            "call": "base",
-            "cold": "base",
-            "safe call": "safe",
-            "safe cold": "safe",
+            "base": ["call", "cold"],
+            "safe": ["safe call", "safe cold", "save call", "save cold"],
         },
-        "search": { }
+        "search": {
+            "captures": ["snake_name"],
+            "actions": ["call", "cold"],
+        },
     },
+    "return": {
+        "search": {
+            "captures": ["expression"],
+            "actions": ["return"],
+        },
+    },
+    "super": {
+        "search": {
+            "captures": ["expression"],
+            "actions": ["superb"],
+        },
+    },
+    "yield": {
+        "search": {
+            "captures": ["expression"],
+            "actions": ["yield"],
+        },
+    }
 }

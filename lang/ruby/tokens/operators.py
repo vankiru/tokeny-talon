@@ -6,155 +6,332 @@ ctx.matches = "title: /\w*\.rb (.*) - VIM/"
 RUBY_OPERATOR_TOKENS = {
     "set_to": {
         "input": {
-            "set to": "base",
-            "set two": "base",
-            "said to": "base",
-            "said two": "base"
+            "capture": "blank",
+            "base": ["set to", "set two", "said to", "said two"],
         },
-        "search": { }
+        "search": {
+            "captures": ["blank"],
+            "actions": ["set to", "set two", "said to", "said two"],
+        },
     },
     "index": {
-        "input": {"index": "base"},
-        "search": { }
+        "input": {
+            "capture": "blank",
+            "base": ["index"],
+        },
+        "search": {
+            "captures": ["blank"],
+            "actions": ["index"],
+        },
     },
     "plus": {
-        "input": {"plus": "base"},
-        "search": { }
+        "input": {
+            "capture": "blank",
+            "base": ["plus"],
+        },
+        "search": {
+            "captures": ["blank"],
+            "actions": ["plus"],
+        },
     },
     "minus": {
-        "input": {"minus": "base"},
-        "search": { }
+        "input": {
+            "capture": "blank",
+            "base": ["minus"],
+        },
+        "search": {
+            "captures": ["blank"],
+            "actions": ["minus"],
+        },
     },
     "multi": {
-        "input": {"multi": "base"},
-        "search": { }
+        "input": {
+            "capture": "blank",
+            "base": ["multi"],
+        },
+        "search": {
+            "captures": ["blank"],
+            "actions": ["multi"],
+        },
     },
     "divide": {
-        "input": {"divide": "base"},
-        "search": { }
+        "input": {
+            "capture": "blank",
+            "base": ["divide"],
+        },
+        "search": {
+            "captures": ["blank"],
+            "actions": ["divide"],
+        },
     },
     "mod": {
         "input": {
-            "mode": "base",
-            "modulus": "base"
+            "capture": "blank",
+            "base": ["mode", "modulus"],
         },
-        "search": { }
+        "search": {
+            "captures": ["blank"],
+            "actions": ["mode", "modulus"],
+        },
     },
     "power": {
-        "input": {"power": "base"},
-        "search": { }
+        "input": {
+            "capture": "blank",
+            "base": ["power"],
+        },
+        "search": {
+            "captures": ["blank"],
+            "actions": ["power"],
+        },
     },
     "plus_equal": {
-        "input": {"plus equal": "base"},
-        "search": { }
+        "input": {
+            "capture": "blank",
+            "base": ["plus equal"],
+        },
+        "search": {
+            "captures": ["blank"],
+            "actions": ["plus equal"],
+        },
     },
     "minus_equal": {
-        "input": {"minus equal": "base"},
-        "search": { }
+        "input": {
+            "capture": "blank",
+            "base": ["minus equal"],
+        },
+        "search": {
+            "captures": ["blank"],
+            "actions": ["minus equal"],
+        },
     },
     "multi_equal": {
-        "input": {"multi equal": "base"},
-        "search": { }
+        "input": {
+            "capture": "blank",
+            "base": ["multi equal"],
+        },
+        "search": {
+            "captures": ["blank"],
+            "actions": ["multi equal"],
+        },
     },
     "divide_equal": {
-        "input": {"divide equal": "base"},
-        "search": { }
+        "input": {
+            "capture": "blank",
+            "base": ["divide equal"],
+        },
+        "search": {
+            "captures": ["blank"],
+            "actions": ["divide equal"],
+        },
     },
     "mod_equal": {
         "input": {
-            "mode equal": "base",
-            "modulus equal": "base"
+            "capture": "blank",
+            "base": ["mode equal", "modulus equal"],
         },
-        "search": { }
+        "search": {
+            "captures": ["blank"],
+            "actions": ["mode equal", "modulus equal"],
+        },
     },
     "power_equal": {
-        "input": {"power equal": "base"},
-        "search": { }
+        "input": {
+            "capture": "blank",
+            "base": ["power equal"],
+        },
+        "search": {
+            "captures": ["blank"],
+            "actions": ["power equal"],
+        },
     },
     "equal": {
-        "input": {"equal": "base"},
-        "search": { }
+        "input": {
+            "capture": "blank",
+            "base": ["equal"],
+        },
+        "search": {
+            "captures": ["blank"],
+            "actions": ["equal"],
+        },
     },
     "not_equal": {
-        "input": {"not equal": "base"},
-        "search": { }
+        "input": {
+            "capture": "blank",
+            "base": ["not equal"],
+        },
+        "search": {
+            "captures": ["blank"],
+            "actions": ["not equal"],
+        },
     },
     "great": {
-        "input": {"great": "base"},
-        "search": { }
+        "input": {
+            "capture": "blank",
+            "base": ["great"],
+        },
+        "search": {
+            "captures": ["blank"],
+            "actions": ["great"],
+        },
     },
     "less": {
-        "input": {"less": "base"},
-        "search": { }
+        "input": {
+            "capture": "blank",
+            "base": ["less"],
+        },
+        "search": {
+            "captures": ["blank"],
+            "actions": ["less"],
+        },
     },
     "great_equal": {
-        "input": {"great equal": "base"},
-        "search": { }
+        "input": {
+            "capture": "blank",
+            "base": ["great equal"],
+        },
+        "search": {
+            "captures": ["blank"],
+            "actions": ["great equal"],
+        },
     },
     "less_equal": {
-        "input": {"less equal": "base"},
-        "search": { }
+        "input": {
+            "capture": "blank",
+            "base": ["less equal"],
+        },
+        "search": {
+            "captures": ["blank"],
+            "actions": ["less equal"],
+        },
     },
     "test_equal": {
-        "input": {"test equal": "base"},
-        "search": { }
+        "input": {
+            "capture": "blank",
+            "base": ["test equal"],
+        },
+        "search": {
+            "captures": ["blank"],
+            "actions": ["test equal"],
+        },
     },
     "compare": {
-        "input": {"compare": "base"},
-        "search": { }
+        "input": {
+            "capture": "blank",
+            "base": ["compare"],
+        },
+        "search": {
+            "captures": ["blank"],
+            "actions": ["compare"],
+        },
     },
     "and": {
-        "input": {"also": "base"},
-        "search": { }
+        "input": {
+            "capture": "blank",
+            "base": ["also"],
+        },
+        "search": {
+            "captures": ["blank"],
+            "actions": ["also"],
+        },
     },
     "or": {
-        "input": {"either": "base"},
-        "search": { }
+        "input": {
+            "capture": "blank",
+            "base": ["either"],
+        },
+        "search": {
+            "captures": ["blank"],
+            "actions": ["either"],
+        },
     },
     "not": {
-        "input": {"not": "base"},
-        "search": { }
+        "input": {
+            "capture": "blank",
+            "base": ["not"],
+        },
+        "search": {
+            "captures": ["blank"],
+            "actions": ["not"],
+        },
     },
     "in": {
-        "input": {"inside": "base"},
-        "search": { }
+        "input": {
+            "capture": "blank",
+            "base": ["inside"],
+        },
+        "search": {
+            "captures": ["blank"],
+            "actions": ["inside"],
+        },
     },
     "match": {
         "input": {
-            "match": "base",
-            "much": "base"
+            "capture": "blank",
+            "base": ["match", "much"],
         },
-        "search": { }
+        "search": {
+            "captures": ["blank"],
+            "actions": ["match", "much"],
+        },
     },
     "bit_and": {
         "input": {
-            "bit and": "base",
-            "bit add": "base",
-            "bit also": "base"
+            "capture": "blank",
+            "base": ["bit and", "bit add", "bit also"],
         },
-        "search": { }
+        "search": {
+            "captures": ["blank"],
+            "actions": ["bit and", "bit add", "bit also"],
+        },
     },
     "bit_or": {
         "input": {
-            "bit or": "base",
-            "bit either": "base"
+            "capture": "blank",
+            "base": ["bit or", "bit either"],
         },
-        "search": { }
+        "search": {
+            "captures": ["blank"],
+            "actions": ["bit or", "bit either"],
+        },
     },
     "bit_xor": {
-        "input": {"bit ex": "base"},
-        "search": { }
+        "input": {
+            "capture": "blank",
+            "base": ["bit ex"],
+        },
+        "search": {
+            "captures": ["blank"],
+            "actions": ["bit ex"],
+        },
     },
     "bit_not": {
-        "input": {"bit not": "base"},
-        "search": { }
+        "input": {
+            "capture": "blank",
+            "base": ["bit not"],
+        },
+        "search": {
+            "captures": ["blank"],
+            "actions": ["bit not"],
+        },
     },
     "shift_left": {
-        "input": {"shift left": "base"},
-        "search": { }
+        "input": {
+            "capture": "blank",
+            "base": ["shift left"],
+        },
+        "search": {
+            "captures": ["blank"],
+            "actions": ["shift left"],
+        },
     },
     "shift_right": {
-        "input": {"shift right": "base"},
-        "search": { }
+        "input": {
+            "capture": "blank",
+            "base": ["shift right"],
+        },
+        "search": {
+            "captures": ["blank"],
+            "actions": ["shift right"],
+        },
     },
 }

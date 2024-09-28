@@ -5,56 +5,45 @@ ctx.matches = "title: /\w*\.rb (.*) - VIM/"
 
 RUBY_NAME_TOKENS = {
     "variable_name": {
-        "input": {
-            "capture": "snake_name",
-            "name": "base"
+        "search": {
+            "captures": ["snake_name"],
+            "actions": ["name"],
         },
-        "search": { }
     },
     "instance_variable_name": {
-        "input": {
-            "capture": "snake_name",
-            "instance": "base"
+        "search": {
+            "captures": ["snake_name"],
+            "actions": ["instance"],
         },
-        "search": { }
     },
     "class_variable_name": {
-        "input": {
-            "capture": "snake_name",
-            "class instance": "base"
+        "search": {
+            "captures": ["snake_name"],
+            "actions": ["class instance"],
         },
-        "search": { }
     },
     "global_name": {
-        "input": {
-            "capture": "snake_name",
-            "global": "base"
+        "search": {
+            "captures": ["snake_name"],
+            "actions": ["global"],
         },
-        "search": { }
     },
     "method_name": {
-        "input": {
-            "capture": "snake_name",
-            "bang": "bang",
-            "bank": "bang",
-            "plight": "plight",
-            "self": "self"
+        "search": {
+            "captures": ["snake_name"],
+            "actions": ["met name"],
         },
-        "search": { }
     },
     "const_name": {
-        "input": {
-            "capture": "const_name",
-            "const": "base"
+        "search": {
+            "captures": ["const_name"],
+            "actions": ["const"],
         },
-        "search": { }
     },
     "class_name": {
-        "input": {
-            "capture": "class_name",
-            "type": "base",
-            "pack": "pack",
+        "search": {
+            "captures": ["class_name"],
+            "actions": ["type"],
         },
-        "search": { }
     },
 }

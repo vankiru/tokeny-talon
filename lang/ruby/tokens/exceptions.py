@@ -42,17 +42,36 @@ ctx.lists["user.exception_name"] = {
 }
 
 RUBY_EXCEPTION_TOKENS = {
+    "raise": {
+        "search": {
+            "captures": ["text", "expression"],
+            "actions": ["raise", "rise"]
+        },
+    },
+    "rescue": {
+        "search": {
+            "captures": ["expression"],
+            "actions": ["rescue"]
+        },
+    },
     "ensure": {
         "input": {
-            "ensure": "base",
-            "insure": "base"
+            "capture": "blank",
+            "base": ["ensure", "insure"],
         },
-        "search": { }
+        "search": {
+            "captures": ["blank"],
+            "actions": ["ensure", "insure"],
+        },
     },
     "retry": {
         "input": {
-            "retry": "base"
+            "capture": "blank",
+            "base": ["retry"],
         },
-        "search": { }
+        "search": {
+            "captures": ["blank"],
+            "actions": ["retry"],
+        },
     },
 }

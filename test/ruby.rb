@@ -7,7 +7,6 @@
 Set.new()
 Array.new()
 Hash.new()
-application: on: {} a:
 
 <<~DOC
 application
@@ -115,6 +114,7 @@ until true do
   next if true
   next 1 if true
   1 if false
+  nil
 end
 
 if a

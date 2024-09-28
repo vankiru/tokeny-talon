@@ -7,37 +7,51 @@ RUBY_MODULE_TOKENS = {
     "module": {
         "input": {
             "capture": "class_name",
-            "module": "base",
-            "model": "base",
+            "base": ["module", "model"],
         },
-        "search": { }
+        "search": {
+            "captures": ["class_name"],
+            "actions": ["module", "model"],
+        },
     },
     "refine": {
         "input": {
             "capture": "class_name",
-            "refine": "base",
+            "base": ["refine"],
         },
-        "search": { }
+        "search": {
+            "captures": ["class_name"],
+            "actions": ["refine"],
+        },
     },
     "include": {
         "input": {
             "capture": "class_name",
-            "include": "base",
+            "base": ["include"],
         },
-        "search": { }
+        "search": {
+            "captures": ["class_name"],
+            "actions": ["include"],
+        },
     },
     "extend": {
         "input": {
             "capture": "class_name",
-            "extend": "base",
+            "base": ["extend"],
         },
-        "search": { }
+        "search": {
+            "captures": ["class_name"],
+            "actions": ["extend"],
+        },
     },
     "using": {
         "input": {
             "capture": "class_name",
-            "using": "base",
+            "base": ["using"],
         },
-        "search": { }
+        "search": {
+            "captures": ["class_name"],
+            "actions": ["using"],
+        },
     },
 }

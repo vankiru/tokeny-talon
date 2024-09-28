@@ -6,10 +6,13 @@ ctx.matches = "title: /\w*\.rb (.*) - VIM/"
 RUBY_BLOCK_TOKENS = {
     "block": {
         "input": {
-            "block": "inline",
-            "block do": "block",
-            "block end": "block"
+            "capture": "blank",
+            "inline": ["block"],
+            "block": ["block do", "block end"]
         },
-        "search": { }
+        "search": {
+            "captures": ["blank"],
+            "actions": ["block"],
+        },
     },
 }
