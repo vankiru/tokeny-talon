@@ -51,6 +51,7 @@ RUBY_DATA_TYPE_TOKENS = {
             "quote": ["quote"],
             "grave": ["grave"],
             "heredoc": ["docs"],
+            "text": ["text"]
         },
         "search": {
             "captures": ["text"],

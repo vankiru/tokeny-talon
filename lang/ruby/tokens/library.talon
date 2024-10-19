@@ -1,14 +1,14 @@
 title: /.*\.rb (.*) - VIM/
 -
 
-print:
+puts:
   user.vim_tokeny_insert("method_name base", "puts")
 
-print <user.text>:
+puts <user.text>:
   user.vim_tokeny_insert("method_name base", "puts")
   user.vim_tokeny_insert("string double", text)
 
-call {user.std_method}:
+(call | cold) {user.std_method}:
   user.vim_tokeny_insert("call base", std_method)
 
 (safe | save) (call | cold) {user.std_method}:

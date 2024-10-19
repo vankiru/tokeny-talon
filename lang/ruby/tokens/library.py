@@ -13,7 +13,12 @@ ctx.lists["user.std_method"] = {
         "to decimal": "to_d",
         "to string": "to_s",
         "to list": "to_a",
-        "to hash": "to_h"
+        "to hash": "to_h",
+        "none": "nil?",
+        "nun": "nil?",
+        "sun": "sum",
+        "first": "first",
+        "each": "each",
 }
 
 ctx.lists["user.std_block_method"] = {

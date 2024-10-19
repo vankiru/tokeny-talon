@@ -33,3 +33,8 @@ string key <user.key_name> [to]:
 
 object key <user.variable_name> [to]:
   user.vim_tokeny_insert("key object", key_name)
+
+# path
+
+filepath <user.file_path>:
+  user.vim_tokeny_insert("string text", file_path)

@@ -1,4 +1,5 @@
 from talon import Context, Module, actions
+from talon import clip
 import pyperclip
 
 mod = Module()
@@ -25,9 +26,8 @@ class Actions:
 @ctx.action_class("user")
 class TokenyActions:
     def pyperclip_insert(text: str):
-        print("!!!!!!!!!")
-        print(text)
-        pyperclip.copy(text)
+        # with clip.revert():
+        clip.set_text(text)
         actions.key('super-v')
 
     def vim_tokeny_insert(variation: str, values: str = ''):
